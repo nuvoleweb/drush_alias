@@ -73,6 +73,9 @@ cdd()
   local drupal_root=`_drupal_root` && \
   if [ "$1" == "" ] ; then
     cd "$drupal_root";
+  elif [[ "$1" == @* ]] ; then
+    echo "Taking you to the $1 site alias...";
+    pushd `drush dd $1`;
   else
     cd `find $drupal_root -regex ".*/$1\.module" -exec dirname {} \;`
   fi
