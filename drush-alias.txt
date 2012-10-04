@@ -14,6 +14,7 @@ alias drdb='drush updb && drush cc all'
 alias drdu='drush sql-dump --ordered-dump --result-file=dump.sql'
 alias dren='drush pm-enable'
 alias drdis='drush pm-disable'
+alias drun='drush pm-uninstall'
 alias drf='drush features'
 alias drfd='drush features-diff'
 alias drfu='drush -y features-update'
@@ -83,6 +84,7 @@ cdd()
 
 complete -F _drupal_modules dren
 complete -F _drupal_modules drdis
+complete -F _drupal_modules drun
 complete -F _drupal_features drfr
 complete -F _drupal_features drfu
 complete -F _drupal_features drfd
