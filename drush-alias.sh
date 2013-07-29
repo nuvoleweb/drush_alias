@@ -1,3 +1,4 @@
+#!/bin/bash
 # Drush-Bash tricks 0.1
 # Copyright Nuvole 2010.
 # License: GPL 3, see http://www.gnu.org/licenses/gpl.html
