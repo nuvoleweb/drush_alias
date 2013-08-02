@@ -13,8 +13,8 @@ alias drsp='cp sites/default/default.settings.php sites/default/settings.php'
 alias drcc='drush cache-clear all'
 alias drdb='drush updb && drush cc all'
 alias drdu='drush sql-dump --ordered-dump --result-file=dump.sql'
-alias dren='drush pm-enable'
-alias drdis='drush pm-disable'
+alias dren='drush pm-enable -y'
+alias drdis='drush pm-disable -y'
 alias drun='drush pm-uninstall'
 alias drf='drush features'
 alias drfd='drush features-diff'
@@ -23,7 +23,6 @@ alias drfr='drush -y features-revert'
 alias drfra='drush -y features-revert all'
 alias dr='drush'
 alias dml='modlist'
-alias dr='drush'
 
 # Completion. For personal use, just copy all the code below to
 # the end of .bashrc; for system-wide use, copy to a file like
@@ -100,7 +99,7 @@ modlist(){
 }
 
 drinst(){
-  if ["$1" == ""] ; then
+  if [ "$1" == "" ] ; then
     echo "At least one argument should be given."
     echo "Usage: drinst [module_name] -- example: drinst examples"
   else
@@ -116,7 +115,10 @@ dtricks(){
   echo "  cdd -- Goes to the root of the current Drupal installation"
   echo "  drdb -- A combination of drush updb and drush cc all. First updates will be run and then cache will be cleared."
   echo "  modlist (dml) -- Prints a list of modules found in the current Drupal installation. A grep parameter can be added to grep for specific terms. E.g.: 'modlist user'. Use 'modlist help' for help"
-  echo "  drinst -- Installs and enable the specified module. A modulename should be provided as argument 1 -- example: drinst examples"
+  echo ""
+  echo "  drinst -- Installs and enables the specified module. A modulename should be provided as argument 1 -- example: drinst examples"
+  echo "  dren -- Enables the specified module. A modulename should be provided as argument 1 -- example: dren examples"
+  echo "  drdis -- Disables the specified module. A modulename should be provided as argument 1 -- example: drdis examples"
   echo ""
 }
 
