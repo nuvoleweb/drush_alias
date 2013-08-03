@@ -12,9 +12,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# For a quick start: copy this entire file to the end of the .bashrc
-# file in your home directory and it will be enabled at your next
-# login. See http://nuvole.org/node/26 for more details and options.
+# For a quick start: source this file from the .bashrc file in your
+# home directory, or just copy its contents to the end of .bashrc
+# entirely, and it will be enabled at your next login.
+# See http://nuvole.org/node/26 for more details and options.
 
 # Drupal and Drush aliases.
 # To be added at the end of .bashrc.
