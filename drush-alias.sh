@@ -96,12 +96,12 @@ cdd()
 modlist(){
  if [ "$1" == "" ] ; then
     drush pm-list
- elif [ "$1" == "help" ] ; then
-    echo "Uage: mlist [searchterm] Where searchterm is what will be grep'ed for."
+ elif [ "$1" == "--help" ] ; then
+    echo "Uage: modlist [searchterm] Where searchterm is what will be grep'ed for."
     echo ""
-    echo "mlist withut any paramter will give a list of all modules in the current drupal installation"
+    echo "modlist withut any paramter will give a list of all modules in the current drupal installation"
     echo ""
-    echo "example: mlist core - will give be equal drush pm-list | grep core"
+    echo "example: modlist core - will give be equal drush pm-list | grep core"
  else
     drush pm-list | grep $1
  fi
