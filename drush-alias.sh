@@ -1,6 +1,6 @@
 #!/bin/bash
 # Drush-Bash tricks 0.1
-# Copyright Nuvole 2010.
+# Copyright 2010, 2013 Nuvole; portions copyright 2013 Martin Møller.
 # License: GPL 3, see http://www.gnu.org/licenses/gpl.html
 
 # For a quick start: copy this entire file to the end of the .bashrc
@@ -108,8 +108,8 @@ drinst(){
   fi
 }
 
-dtricks(){
-  echo "Different custom shortcuts for drush"
+dalias(){
+  echo "Different custom actions for drush"
   echo ""
   echo "Commands:"
   echo "  cdd -- Goes to the root of the current Drupal installation"
@@ -129,6 +129,4 @@ complete -F _drupal_features drfr
 complete -F _drupal_features drfu
 complete -F _drupal_features drfd
 complete -F _drupal_modules cdd
-complete -F _drupal_modules dtricks
-complete -F _drupal_modules drinst
 complete -F _drupal_modules modlist
