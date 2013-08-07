@@ -13,7 +13,7 @@ equivalent: ````. /path/to/drush_alias.sh````) to your
 ````.bash_profile````, restart the terminal or alike and the functions
 will be available.
 
-Copyright 2010, 2013 Nuvole
+Copyright 2010, 2013 Nuvole; portions copyright 2013 Martin Møller.
 
 Licensed under the Apache License, Version 2.0:
 http://www.apache.org/licenses/LICENSE-2.0

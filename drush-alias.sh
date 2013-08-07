@@ -1,7 +1,6 @@
 #!/bin/bash
 # Drush-Bash tricks 0.1
-
-# Copyright 2010, 2013 Nuvole
+# Copyright 2010, 2013 Nuvole; portions copyright 2013 Martin Møller.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
@@ -23,8 +22,8 @@ alias drsp='cp sites/default/default.settings.php sites/default/settings.php'
 alias drcc='drush cache-clear all'
 alias drdb='drush updb && drush cc all'
 alias drdu='drush sql-dump --ordered-dump --result-file=dump.sql'
-alias dren='drush pm-enable'
-alias drdis='drush pm-disable'
+alias dren='drush pm-enable -y'
+alias drdis='drush pm-disable -y'
 alias drun='drush pm-uninstall'
 alias drf='drush features'
 alias drfd='drush features-diff'
@@ -32,6 +31,7 @@ alias drfu='drush -y features-update'
 alias drfr='drush -y features-revert'
 alias drfra='drush -y features-revert all'
 alias dr='drush'
+alias dml='modlist'
 
 # Completion. For personal use, just copy all the code below to
 # the end of .bashrc; for system-wide use, copy to a file like
@@ -41,7 +41,7 @@ _drupal_root() {
   # Go up until we find index.php
   current_dir=`pwd`;
   while [ ${current_dir} != "/" -a -d "${current_dir}" -a \
-          ! -f "${current_dir}/index.php" ] ; 
+          ! -f "${current_dir}/index.php" ] ;
   do
     current_dir=$(dirname "${current_dir}") ;
   done
@@ -49,7 +49,7 @@ _drupal_root() {
     exit 1 ;
   else
     echo "$current_dir" ;
-  fi 
+  fi
 }
 
 _drupal_modules_in_dir()
@@ -93,6 +93,44 @@ cdd()
   fi
 }
 
+modlist(){
+ if [ "$1" == "" ] ; then
+    drush pm-list
+ elif [ "$1" == "--help" ] ; then
+    echo "Uage: modlist [searchterm] Where searchterm is what will be grep'ed for."
+    echo ""
+    echo "modlist withut any paramter will give a list of all modules in the current drupal installation"
+    echo ""
+    echo "example: modlist core - will give be equal drush pm-list | grep core"
+ else
+    drush pm-list | grep $1
+ fi
+}
+
+drinst(){
+  if [ "$1" == "" ] ; then
+    echo "At least one argument should be given."
+    echo "Usage: drinst [module_name] -- example: drinst examples"
+  else
+    drush dl $1 -y
+    drush en $1 -y
+  fi
+}
+
+dalias(){
+  echo "Different custom actions for drush"
+  echo ""
+  echo "Commands:"
+  echo "  cdd             Goes to the root of the current Drupal installation"
+  echo "  drdb            A combination of drush updb and drush cc all. First updates will be run and then cache will be cleared."
+  echo "  modlist (dml)   Prints a list of modules found in the current Drupal installation. A grep parameter can be added to grep for specific terms. E.g.: 'modlist user'. Use 'modlist help' for help"
+  echo ""
+  echo "  drinst          Installs and enables the specified module. A modulename should be provided as argument 1 -- example: drinst examples"
+  echo "  dren            Enables the specified module. A modulename should be provided as argument 1 -- example: dren examples"
+  echo "  drdis           Disables the specified module. A modulename should be provided as argument 1 -- example: drdis examples"
+  echo ""
+}
+
 complete -F _drupal_modules dren
 complete -F _drupal_modules drdis
 complete -F _drupal_modules drun
@@ -100,3 +138,4 @@ complete -F _drupal_features drfr
 complete -F _drupal_features drfu
 complete -F _drupal_features drfd
 complete -F _drupal_modules cdd
+complete -F _drupal_modules modlist
