@@ -2,7 +2,7 @@ drush_alias
 ===========
 
 Different custom shortcuts for drush
-Blog post: http://nuvole.org/blog/2010/nov/09/typing-less-drush-aliases-and-autocompletion
+Blog post: http://nuvole.org/node/65
 
 ### Usage ###
 Clone this repository and add the drush_alias to your ````.bashrc````,
@@ -13,7 +13,7 @@ equivalent: ````. /path/to/drush_alias.sh````) to your
 ````.bash_profile````, restart the terminal or alike and the functions
 will be available.
 
-Copyright 2010, 2013 Nuvole; portions copyright 2013 Martin Møller.
+Copyright 2010, 2013, 2014 Nuvole; portions copyright 2013 Martin Møller.
 
 Licensed under the Apache License, Version 2.0:
 http://www.apache.org/licenses/LICENSE-2.0
