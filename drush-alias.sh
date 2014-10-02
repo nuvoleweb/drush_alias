@@ -1,5 +1,5 @@
 #!/bin/bash
-# Drush-Bash tricks 2.0
+# Drush-Bash tricks 2.x-dev
 # Copyright 2010, 2013, 2014 Nuvole; portions copyright 2013 Martin Møller.
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
