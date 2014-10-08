@@ -98,7 +98,7 @@ modlist(){
  if [ "$1" == "" ] ; then
     drush pm-list
  elif [ "$1" == "--help" ] ; then
-    echo "Uage: modlist [searchterm] Where searchterm is what will be grep'ed for."
+    echo "Usage: modlist [searchterm] Where searchterm is what will be passed to grep."
     echo ""
     echo "modlist without any parameters will list all modules in the current Drupal installation."
     echo ""
