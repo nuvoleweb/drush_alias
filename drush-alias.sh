@@ -100,9 +100,9 @@ modlist(){
  elif [ "$1" == "--help" ] ; then
     echo "Uage: modlist [searchterm] Where searchterm is what will be grep'ed for."
     echo ""
-    echo "modlist withut any paramter will give a list of all modules in the current drupal installation"
+    echo "modlist without any parameters will list all modules in the current Drupal installation."
     echo ""
-    echo "example: modlist core - will give be equal drush pm-list | grep core"
+    echo "example: modlist core - is equivalent to drush pm-list | grep core"
  else
     drush pm-list | grep $1
  fi
@@ -126,9 +126,9 @@ dalias(){
   echo "  drdb            A combination of drush updb and drush cc all. First updates will be run and then cache will be cleared."
   echo "  modlist (dml)   Prints a list of modules found in the current Drupal installation. A grep parameter can be added to grep for specific terms. E.g.: 'modlist user'. Use 'modlist help' for help"
   echo ""
-  echo "  drinst          Installs and enables the specified module. A modulename should be provided as argument 1 -- example: drinst examples"
-  echo "  dren            Enables the specified module. A modulename should be provided as argument 1 -- example: dren examples"
-  echo "  drdis           Disables the specified module. A modulename should be provided as argument 1 -- example: drdis examples"
+  echo "  drinst          Installs and enables the specified module. A module name should be provided as argument 1 -- example: drinst examples"
+  echo "  dren            Enables the specified module. A module name should be provided as argument 1 -- example: dren examples"
+  echo "  drdis           Disables the specified module. A module name should be provided as argument 1 -- example: drdis examples"
   echo ""
 }
 
