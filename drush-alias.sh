@@ -64,7 +64,7 @@ _drupal_modules()
   COMPREPLY=()
   cur=${COMP_WORDS[COMP_CWORD]}
   local drupal_root=`_drupal_root` && \
-  _drupal_modules_in_dir "$drupal_root/sites $drupal_root/profiles $drupal_root/modules"
+  _drupal_modules_in_dir "$drupal_root/sites $drupal_root/profiles $drupal_root/modules $drupal_root/core/modules"
 }
 
 _drupal_features_in_dir()
