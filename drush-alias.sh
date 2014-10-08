@@ -20,6 +20,7 @@
 # To be added at the end of .bashrc.
 alias drsp='cp sites/default/default.settings.php sites/default/settings.php'
 alias drcc='drush cache-clear all'
+alias drcr='drush cache-rebuild'
 alias drdb='drush updb && drush cc all'
 alias drdu='drush sql-dump --ordered-dump --result-file=dump.sql'
 alias dren='drush pm-enable -y'
